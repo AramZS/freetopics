@@ -6,6 +6,7 @@
     // https://developer.chrome.com/docs/privacy-sandbox/topics/overview/
     // Turn on Privacy Sandbox Ads API here: chrome://flags/
     // See your Topics here: chrome://topics-internals/
+    // Get some cool topics - https://trackthis.link/
     // document.browsingTopics() returns an array of up to three topic objects in random order.
     const topics = await document.browsingTopics();
     console.log("Let's Fking Go get your topics v0.0.3", topics);
