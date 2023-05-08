@@ -18,7 +18,10 @@ let setup = `<script>(async function(){
     // send topics via postMessage
   }
 })()</script>`;
+if (!document.getElementById('lfgtopics')){
+  let iFrame = document.createElement('iframe');
+  iFrame.id = "lfgtopics";
+  iFrame.srcdoc = `<html>${setup}</html>`;
+  document.getElementsByTagName('BODY')[0].append(iFrame);
+}
 
-let iFrame = document.createElement('iframe');
-iFrame.srcdoc = `<html>${setup}</html>`;
-document.getElementsByTagName('BODY')[0].append(iFrame);
