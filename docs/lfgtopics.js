@@ -1,8 +1,9 @@
-(async function(){
+let setup = `<script>(async function(){
   window.lfgtopics = window.lfgtopics ? window.lfgtopics : false;
   if (window.lfgtopics === false){
     window.lfgtopics = true;
     // https://github.com/patcg-individual-drafts/topics
+    // https://github.com/dgirardi/Prebid.js/blob/c0a922cc59f074aa98a2784fe1d4e794c5da0a46/modules/topicsFpdModule.js
     // https://developer.chrome.com/docs/privacy-sandbox/topics/overview/
     // Turn on Privacy Sandbox Ads API here: chrome://flags/
     // See your Topics here: chrome://topics-internals/
@@ -16,4 +17,8 @@
     // Create a post-message mechanism 
     // send topics via postMessage
   }
-})()
+})()</script>`;
+
+let iFrame = document.createElement('iframe');
+iFrame.srcdoc = `<html>${setup}</html>`;
+document.getElementsByTagName('BODY')[0].append(iFrame);
