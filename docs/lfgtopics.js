@@ -21,7 +21,7 @@ let setup = `<script>(async function(){
 if (!document.getElementById('lfgtopics')){
   let iFrame = document.createElement('iframe');
   iFrame.id = "lfgtopics";
-  iFrame.srcdoc = `<html>${setup}</html>`;
-  document.getElementsByTagName('BODY')[0].append(iFrame);
+  iFrame.src = `https://free.topics.center/iframe-contents.html?cb=12312323sadf`;
+  document.body.prepend(iFrame);
 }
 
