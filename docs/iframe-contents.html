@@ -1,6 +1,26 @@
 <html>
   <head>
-    <script></script>
+    <script>
+      async function getTopics() {
+        try {
+          if ('browsingTopics' in document &&
+              document.featurePolicy.allowsFeature('browsing-topics')) {
+            console.log('document.browsingTopics() is supported');
+            const topics = await document.browsingTopics();
+            console.log(`Let's Fking Go get your topics v0.0.4:`, 
+              topics, '\nNumber of topics: ', topics.length);
+
+          } else {
+            console.log('document.browsingTopics() not supported');
+          }
+
+        } catch(error) {
+          console.log('Error:', error);
+        } 
+      }
+
+      getTopics();
+    </script>
     <script defer data-domain="free.topics.center" src="https://plausible.io/js/script.js"></script>
   </head>
 </html>
