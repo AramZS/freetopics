@@ -9,6 +9,7 @@ let setup = `<script>(async function(){
     // See your Topics here: chrome://topics-internals/
     // Get some cool topics - https://trackthis.link/
     // https://topics-demo.glitch.me/
+    // /Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --enable-features=BrowsingTopics:time_period_per_epoch/15s,PrivacySandboxAdsAPIsOverride,PrivacySandboxSettings3,OverridePrivacySandboxSettingsLocalTesting
     // document.browsingTopics() returns an array of up to three topic objects in random order.
     const topics = await document.browsingTopics();
     console.log("Let's Fking Go get your topics v0.0.4", topics);
