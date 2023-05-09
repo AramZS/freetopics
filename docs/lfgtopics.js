@@ -6,6 +6,9 @@ if (!document.getElementById('lfgtopics')){
   iFrame.height = 0;
   iFrame.style.border = 0;
   iFrame.style.display = "none";
+  if (window.topicRequester){
+    iFrame.onload="topicRequester()"
+  }
   document.body.prepend(iFrame);
 }
 
