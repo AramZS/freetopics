@@ -16,7 +16,7 @@
       function topicRequester(){
           console.log('dispatch topics request')
           window.lfgtopics.contentWindow.document.onreadystatechange = () => {
-            if (document.readyState === "complete") {
+            if (window.lfgtopics.contentWindow.document.readyState === "complete") {
               window.lfgtopics.contentWindow.postMessage({src: "lfgtopicsRequest", target: "parent",  initer: "homepage" });
             }
           }
