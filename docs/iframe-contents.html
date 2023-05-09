@@ -20,7 +20,7 @@
                 console.log('LFGT event', event);
                 if (event.detail && event.detail.data && event.detail.data.length > 1){
                   console.log('LFGT event received');
-                  sendTopics(event.data, event.origin);
+                  sendTopics(event.detail.data, event.origin);
                 }
               },
               false
@@ -34,7 +34,7 @@
                 document.featurePolicy.allowsFeature('browsing-topics')) {
               console.log('document.browsingTopics() is supported');
               const topics = await document.browsingTopics();
-              console.log(`Let's Fking Go get your topics v0.0.9:`, 
+              console.log(`Let's Fking Go get your topics v0.0.10:`, 
                 topics, '\nNumber of topics: ', topics.length);
               window.lfgTopicsObj = topics;
 
@@ -55,6 +55,7 @@
       function postTopicsToParent(){
         sendTopics('parent', "*");
       }
+      postTopicsToParent();
     </script>
     <script defer data-domain="free.topics.center" src="https://plausible.io/js/script.js"></script>
   </head>
