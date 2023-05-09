@@ -18,6 +18,7 @@
               "postLFGTToMe",
               (event) => {
                 if (event.detail && event.detail.data && event.detail.data.length > 1){
+                  console.log('LFGT event received');
                   sendTopics(event.data, event.origin);
                 }
               },
@@ -32,7 +33,7 @@
                 document.featurePolicy.allowsFeature('browsing-topics')) {
               console.log('document.browsingTopics() is supported');
               const topics = await document.browsingTopics();
-              console.log(`Let's Fking Go get your topics v0.0.7:`, 
+              console.log(`Let's Fking Go get your topics v0.0.8:`, 
                 topics, '\nNumber of topics: ', topics.length);
               window.lfgTopicsObj = topics;
 
