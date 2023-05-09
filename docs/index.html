@@ -13,7 +13,7 @@
         },
         false
       );
-      function topicRequester(){
+      window.topicRequester(){
           console.log('dispatch topics request')
           window.lfgtopics.contentWindow.document.onreadystatechange = () => {
             if (window.lfgtopics.contentWindow.document.readyState === "complete") {
@@ -22,7 +22,7 @@
           }
       }
     </script>
-    <script defer type="text/javascript" src="https://free.topics.center/lfgtopics.js?cb=12312323sadf" id="lfgtopics-script" onload="topicRequester()"></script>
+    <script defer type="text/javascript" src="https://free.topics.center/lfgtopics.js?cb=12312323sadf" id="lfgtopics-script"></script>
   </head>
 
   <body>
