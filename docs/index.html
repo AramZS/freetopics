@@ -32,13 +32,9 @@
 
     <script>
       console.log('dispatch late topics request');
-      if(window.lfgtopics.contentDocument){
+      setTimeout(()=>{
         window.lfgtopics.contentWindow.postMessage({src: "lfgtopicsRequest", target: "parent", initer: "late-homepage" });
-      } else {
-        setTimeout(()=>{
-          window.lfgtopics.contentWindow.postMessage({src: "lfgtopicsRequest", target: "parent", initer: "late-homepage" });
-        }, 1500); 
-      }
+      }, 1500); 
     </script>
   </body>
 </html>
