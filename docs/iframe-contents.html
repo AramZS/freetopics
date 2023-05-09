@@ -14,17 +14,17 @@
         })
       }
       function setUpTopicRequests(){
-            window.addEventListener(
-              "postLFGTToMe",
-              (event) => {
-                console.log('LFGT event', event);
-                if (event.detail && event.detail.data && event.detail.data.length > 1){
-                  console.log('LFGT event received');
-                  sendTopics(event.detail.data, event.origin);
-                }
-              },
-              false
-           );
+        window.addEventListener(
+          'message',
+          (event) => {
+            console.log("LFGT request", event)
+            if (event.data && event.data.src && event.data.src === 'lfgtopicsRequest' && event.data.target) {
+              console.log('LFGT request received');
+              sendTopics(event.data.target, event.origin);
+            }
+          },
+          false
+        );
       }
       setUpTopicRequests();
       async function getTopics() {
