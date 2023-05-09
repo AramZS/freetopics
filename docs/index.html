@@ -3,18 +3,7 @@
   <head>
     <title>Welcome to the Topics Collective</title>
     <meta charset="UTF-8" />
-    <script defer type="text/javascript" src="https://free.topics.center/lfgtopics.js?cb=12312323sadf" id="lfgtopics-script"></script>
-  </head>
-
-  <body>
-    <h1>
-      Welcome to the Topics Collective
-    </h1>
-
     <script>
-      const p = document.querySelector('p');
-      let count = 0;
-
       window.addEventListener(
         'message',
         (event) => {
@@ -24,12 +13,25 @@
         },
         false
       );
-      const requestForTopics = new CustomEvent("postLFGTToMe", {
-        detail: {
-          data: "parent",
-        },
-      });
-      window.lfgtopics.dispatchEvent(requestForTopics);
+      function topicRequester(){            
+        const requestForTopics = new CustomEvent("postLFGTToMe", {
+          detail: {
+            data: "parent",
+          },
+        });
+        window.lfgtopics.dispatchEvent(requestForTopics);
+      }
+    </script>
+    <script defer type="text/javascript" src="https://free.topics.center/lfgtopics.js?cb=12312323sadf" id="lfgtopics-script" onload="topicRequester"></script>
+  </head>
+
+  <body>
+    <h1>
+      Welcome to the Topics Collective
+    </h1>
+
+    <script>
+
     </script>
   </body>
 </html>
