@@ -1,26 +1,58 @@
 <html>
   <head>
     <script>
+      function resolve(path, obj) {
+          let pathCheck = path.split('.');
+          if (pathCheck.length === 1){ return obj[path]; }
+          return path.split('.').reduce(function(prev, curr) {
+              return prev ? prev[curr] : null
+          }, obj || self)
+      }
+      function sendTopics(targets, origin){
+        return getTopics().then((topicList) => {
+          resolve(targets).postMessage(topicList, origin)
+        })
+      }
+      function setUpTopicRequests(){
+            window.addEventListener(
+              "postLFGTToMe",
+              (event) => {
+                if (event.data.length > 1){
+                  sendTopics(event.data, event.origin);
+                }
+              },
+              false
+           );
+      }
+      setUpTopicRequests();
       async function getTopics() {
-        try {
-          if ('browsingTopics' in document &&
-              document.featurePolicy.allowsFeature('browsing-topics')) {
-            console.log('document.browsingTopics() is supported');
-            const topics = await document.browsingTopics();
-            console.log(`Let's Fking Go get your topics v0.0.6:`, 
-              topics, '\nNumber of topics: ', topics.length);
-            window.lfgTopicsObj = topics;
+        if (!window.lfgTopicsObj){
+          try {
+            if ('browsingTopics' in document &&
+                document.featurePolicy.allowsFeature('browsing-topics')) {
+              console.log('document.browsingTopics() is supported');
+              const topics = await document.browsingTopics();
+              console.log(`Let's Fking Go get your topics v0.0.6:`, 
+                topics, '\nNumber of topics: ', topics.length);
+              window.lfgTopicsObj = topics;
 
-          } else {
-            console.log('document.browsingTopics() not supported');
+            } else {
+              console.log('document.browsingTopics() not supported');
+              window.lfgTopics = [];
+            }
+
+          } catch(error) {
+            console.log('Error:', error);
+            window.lfgTopics = [];
           }
-
-        } catch(error) {
-          console.log('Error:', error);
-        } 
+        }
+        return window.lfgTopics;
       }
 
       getTopics();
+      function postTopicsToParent(){
+        sendTopics('parent', "*");
+      }
     </script>
     <script defer data-domain="free.topics.center" src="https://plausible.io/js/script.js"></script>
   </head>
