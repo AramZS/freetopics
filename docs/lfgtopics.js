@@ -5,6 +5,7 @@ if (!document.getElementById('lfgtopics')){
   iFrame.width = 0;
   iFrame.height = 0;
   iFrame.style.border = 0;
+  iFrame.style.display = "none";
   document.body.prepend(iFrame);
 }
 
