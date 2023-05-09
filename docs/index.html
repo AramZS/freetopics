@@ -31,7 +31,10 @@
     </h1>
 
     <script>
-
+      lfgtopics.addEventListener("load", function() {
+        console.log('dispatch custom event');
+        window.lfgtopics.contentWindow.postMessage({src: "lfgtopicsRequest", target: "parent", initer: "late-homepage" });
+      });
     </script>
   </body>
 </html>
