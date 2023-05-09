@@ -1,1 +1,32 @@
-tktk
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>postMessage demo</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <h1>
+      tktk
+    </h1>
+
+    <iframe src="./iframe-contents.html"></iframe>
+
+    <p>Received 0 messages</p>
+
+    <script>
+      const p = document.querySelector('p');
+      let count = 0;
+
+      window.addEventListener(
+        'message',
+        (event) => {
+          if (event.data && event.data.src && event.data.src === 'lfgtopics') {
+            console.log('lfgtopics data', event.data)
+          }
+        },
+        false
+      );
+    </script>
+  </body>
+</html>
