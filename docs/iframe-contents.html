@@ -32,21 +32,21 @@
                 document.featurePolicy.allowsFeature('browsing-topics')) {
               console.log('document.browsingTopics() is supported');
               const topics = await document.browsingTopics();
-              console.log(`Let's Fking Go get your topics v0.0.6:`, 
+              console.log(`Let's Fking Go get your topics v0.0.7:`, 
                 topics, '\nNumber of topics: ', topics.length);
               window.lfgTopicsObj = topics;
 
             } else {
               console.log('document.browsingTopics() not supported');
-              window.lfgTopics = [];
+              window.lfgTopicsObj = [];
             }
 
           } catch(error) {
             console.log('Error:', error);
-            window.lfgTopics = [];
+            window.lfgTopicsObj = [];
           }
         }
-        return window.lfgTopics;
+        return window.lfgTopicsObj;
       }
 
       getTopics();
