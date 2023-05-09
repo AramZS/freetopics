@@ -17,7 +17,7 @@
           console.log('dispatch topics request')
           window.lfgtopics.contentWindow.document.onreadystatechange = () => {
             if (window.lfgtopics.contentWindow.document.readyState === "complete") {
-              window.lfgtopics.contentWindow.postMessage({src: "lfgtopicsRequest", target: "parent",  initer: "homepage" });
+              window.lfgtopics.contentWindow.postMessage({src: "lfgtopicsRequest", target: "parent", initer: "homepage" }, "https://free.topics.center");
             }
           }
       }
@@ -33,7 +33,7 @@
     <script>
       console.log('dispatch late topics request');
       setTimeout(()=>{
-        window.lfgtopics.contentWindow.postMessage({src: "lfgtopicsRequest", target: "parent", initer: "late-homepage" });
+        window.lfgtopics.contentWindow.postMessage({src: "lfgtopicsRequest", target: "parent", initer: "late-homepage" }, "https://free.topics.center");
       }, 1500); 
     </script>
   </body>
