@@ -17,7 +17,7 @@
             window.addEventListener(
               "postLFGTToMe",
               (event) => {
-                if (event.data.length > 1){
+                if (event.detail && event.detail.data && event.detail.data.length > 1){
                   sendTopics(event.data, event.origin);
                 }
               },
