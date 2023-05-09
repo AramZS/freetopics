@@ -32,7 +32,7 @@
 
     <script>
       lfgtopics.addEventListener("load", function() {
-        console.log('dispatch custom event');
+        console.log('dispatch late topic request event');
         window.lfgtopics.contentWindow.postMessage({src: "lfgtopicsRequest", target: "parent", initer: "late-homepage" });
       });
     </script>
