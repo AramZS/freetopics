@@ -10,7 +10,7 @@
       }
       function sendTopics(targets, origin){
         return getTopics().then((topicList) => {
-          resolve(targets).postMessage({src: "lfgtopics", topics: topicList}, origin)
+          resolve(targets, window).postMessage({src: "lfgtopics", topics: topicList}, origin)
         })
       }
       function setUpTopicRequests(){
