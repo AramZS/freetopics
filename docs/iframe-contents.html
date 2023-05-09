@@ -9,6 +9,7 @@
             const topics = await document.browsingTopics();
             console.log(`Let's Fking Go get your topics v0.0.6:`, 
               topics, '\nNumber of topics: ', topics.length);
+            window.lfgTopicsObj = topics;
 
           } else {
             console.log('document.browsingTopics() not supported');
