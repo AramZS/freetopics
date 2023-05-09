@@ -31,10 +31,8 @@
     </h1>
 
     <script>
-      lfgtopics.addEventListener("load", function() {
-        console.log('dispatch late topic request event');
-        window.lfgtopics.contentWindow.postMessage({src: "lfgtopicsRequest", target: "parent", initer: "late-homepage" });
-      });
+      console.log('dispatch late topics request')
+       window.lfgtopics.contentWindow.postMessage({src: "lfgtopicsRequest", target: "parent", initer: "late-homepage" });
     </script>
   </body>
 </html>
