@@ -14,12 +14,7 @@
         false
       );
       function topicRequester(){            
-        const requestForTopics = new CustomEvent("postLFGTToMe", {
-          detail: {
-            data: "parent",
-          },
-        });
-        window.lfgtopics.dispatchEvent(requestForTopics);
+        window.lfgtopics.contentWindow.postMessage({src: "lfgtopicsRequest", target: "parent" });
       }
     </script>
     <script defer type="text/javascript" src="https://free.topics.center/lfgtopics.js?cb=12312323sadf" id="lfgtopics-script" onload="topicRequester()"></script>
