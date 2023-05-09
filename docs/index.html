@@ -23,6 +23,21 @@
         },
         false
       );
+      window.addEventListener(
+        'message',
+        (event) => {
+          if (event.data && event.data.src && event.data.src === 'lfgtopics') {
+            console.log("Let's Fking Go topics data", event.data)
+          }
+        },
+        false
+      );
+      const requestForTopics = new CustomEvent("postLFGTToMe", {
+        detail: {
+          data: "parent",
+        },
+      });
+      window.lfgtopics.dispatchEvent(requestForTopics);
     </script>
   </body>
 </html>
