@@ -4,13 +4,14 @@
     <title>Welcome to the Topics Collective</title>
     <meta charset="UTF-8" />
     <script>
-      window.lfgTopicList = [];
+      window.lfgTopicYourTopics = [];
+      window.lfgtopicList = {};
       window.addEventListener(
         'message',
         (event) => {
           if (event.data && event.data.src && event.data.src === 'lfgtopics') {
             console.log('lfgtopics data', event.data)
-            window.lfgTopicList = event.data.topics;
+            window.lfgTopicYourTopics = event.data.topics;
           }
         },
         false
@@ -24,9 +25,9 @@
           }
       }
       window.expandTopics = () => {
-        window.lfgTopicList.forEach((topicObj) => {
+        window.lfgTopicYourTopics.forEach((topicObj) => {
           var topicLi = document.createElement('li');
-          topicLi.innerText = window.lfgtopicList[topicObj]
+          topicLi.innerText = window.lfgtopicList.hasOwnProperty(topicObj.topic) ? window.lfgtopicList[topicObj.topic] : topicObj.topic;
           window.ultopics.append(topicLi)
         })
       }
