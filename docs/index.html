@@ -4,6 +4,7 @@
     <title>Welcome to the Topics Collective</title>
     <meta charset="UTF-8" />
     <script>
+      window.lfgTopicList = [];
       window.addEventListener(
         'message',
         (event) => {
@@ -43,6 +44,7 @@
       console.log('dispatch late topics request');
       setTimeout(()=>{
         window.lfgtopics.contentWindow.postMessage({src: "lfgtopicsRequest", target: "parent", initer: "late-homepage" }, "https://free.topics.center");
+        window.expandTopics();
        }, 1500); 
     </script>
     <p>Your free topics are: </p>
