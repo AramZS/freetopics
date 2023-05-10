@@ -17,6 +17,6 @@
 ## Todos 
 
 - [x] Create an iFrame
-- [ ] Create a post message mechanism
+- [x] Create a post message mechanism
 - [ ] Send topics via postMessage
 - [ ] Create optional translator that can be loaded in to turn topics into english language equiv.  
