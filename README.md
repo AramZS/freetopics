@@ -1,6 +1,13 @@
 # freetopics
 
 
+## Outputs 
+
+Homepage - https://free.topics.center/
+iFrame activation of Topics - https://free.topics.center/iframe-contents.html
+Write the iFrame to your page with this script - https://free.topics.center/lfgtopics.js
+Translate topic numbers to words with this script - https://free.topics.center/topicList.js
+
 ## Topics Resources 
 
 - https://github.com/patcg-individual-drafts/topics
