@@ -1,0 +1,112 @@
+<html><head>
+
+<style>
+
+html, body, div, span, h1, h2, h3, p,
+a, q, footer, header, aside {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	line-height: 1;
+	margin: 0;
+	font-family: "Sans-serif";
+	background-color: #EBC7E8;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 10vh auto 10vh;
+  grid-gap: 0;
+  height: 100vh;
+}
+
+header,
+article,
+footer {
+//  border: 1px solid green;
+  padding: 1em;
+}
+
+header, footer {
+  grid-column: 1 / 4;
+  line-height: 150%;
+}
+
+/* Demo Specific Styles */
+body {
+  margin: 0 auto;
+  max-width: 56em;
+  padding: 0;
+}
+
+h1, h2, h3 {
+	display: block;
+	text-align: center;
+	margin-bottom: 0.5vh;
+	white-space: nowrap;
+	color: #645CAA;
+}
+
+p {
+	color: #645CAA;
+}
+
+a {
+	color: inherit;
+}
+
+h1 {
+	font-weight: 100;
+	font-size: 2vh;
+}
+
+.rating {
+	font-size: 5vh;
+}
+
+.count {
+	font-size: 2vh;
+}
+
+
+</style>
+
+</head><body><div class="grid">
+  <header>
+  </header>
+
+  <aside class="sidebar-left">
+  </aside>
+
+  <article>
+    <h1>Your Rating</h1>
+	<h2><span class="rating">0.0</span>&nbsp;<span class="count">00</span></h2>
+	<h3>Powered by Google Chrome Topics API</h3>
+	<h1>&star; &star; &star; &star; &star;</h1>
+	</h3>
+  </article>
+
+  <aside class="sidebar-right">
+  </aside>
+
+  <footer>
+	<p>This page inspired by <a
+	href="https://www.imdb.com/title/tt5497778/"><q>Nosedive</q></a>,
+	a <cite>Black&nbsp;Mirror</cite>
+episode by Charlie&nbsp;Brooker, Michael&nbsp;Schur, and Rashida&nbsp;Jones</a>. Powered by
+<a href="https://patcg-individual-drafts.github.io/topics/">Topics
+API</a>.</p>
+
+  </footer>
+</div><body>
